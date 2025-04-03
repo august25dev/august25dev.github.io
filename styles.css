@@ -1,0 +1,26 @@
+* {
+    color: black;
+    font-family: arial;
+    font-size: 20px;
+}
+h1 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 25px;
+}
+a {
+    color: blue;
+}
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    vertical-align: top
+}
+table {
+    width: 80%;
+    margin: 0 auto;
+}  
+td {
+    height: 100px;
+}
