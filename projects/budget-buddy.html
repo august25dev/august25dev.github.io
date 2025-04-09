@@ -10,9 +10,121 @@
         </div>
         <div class="content">
             <h1>Budget Buddy</h1>
-            <!-- add github page and repository links -->
-            <!-- add project description! -->
-            <p>Project description comming soon...</p>
+            Budget Buddy is my first project and the start of August. It was a very messy and fun building process and I learned a lot about software development.
+            Below you can find out more about the idea behind Budget Buddy, how (I think) the code works and my refelctions on the building porcess. Click on the links to check out
+            <a href="https://august25dev.github.io/budget-buddy/",>the web app</a> and <a href="https://github.com/august25dev/budget-buddy",>the respository (for the code)</a>.
+            <h2>The idea behind Budget Buddy</h2>
+            <p>
+                The main point of the project is to be a simple and fast way to enter expenses on a mobile phone. 
+                This, in combination with the fact that it is free to use and modify is the unique value proposition (UVP).
+                If you were to look at Budget Buddy as a buisness, its <a href="https://en.wikipedia.org/wiki/Business_model_canvas">business model canvas</a> 
+                would be structured very similar to <a href="../index.html">the business model canvas of August</a>.
+                The USP could be added to the core of the business model canvas, the value proposition.
+                Let me explain the details of the idea using a <a href="https://en.wikipedia.org/wiki/Use_case_diagram">UML Use Case Diagram</a>. 
+            </p>
+            <img src="images/BudgetBuddy_UseCase.svg" width="80%" height="100%" alt="Use Case Diagram">
+            <p>
+                On the left-hand side you can see two people that can interact with the system. The developer (me or anyone adopting the software) can add featrues or break stuff.
+                Both things might happen at the same time. 
+            </p>
+            <p>
+                The user can 
+                <ul>
+                    <li>Enter an Expense</li>
+                    <li>View Expenses</li>
+                    <li>Refresh by clearing browser data</li>
+                </ul>
+            </p>
+            <p>
+                Entering an expense includes submitting the expense, this means that to enter an expense you always have to press the submit button so that it is saved in the app.
+                Viewing an expense can include deleting expenses but since it does not have to include it (you might just want to look at the expenses), deleting an expense extends viewing it.
+                To delete an expense you have to select it and confirm that you want to delete it.
+            </p>
+            <p>
+                When viewing expenses the user can open settings (by pressing the settings icon). This allows the user to set up a category. Even though name and budget of the category have to be set separately,
+                I decided to model both as being included in the set-up of a category, since a category without a budget or name does not fulfill its purpouse.
+            </p>
+
+            <h2>How the code works</h2>
+            <p>
+                I built budget buddy using AI in the form of an LLM. I do not understand the code as I do not speak Javascript and HTML fluently, at least not right now.
+                If you are interested in my refelctions about using AI you may look further down the site. With that being said let me try to make sense of the beautiful mess AI and I created.
+                I am very much aware that this code does not follow best practices but a part of me does not care because it works, or at least it seems to work. 
+                On the other hand I do want to improve my coding style and make the code easier to maintain and extend without being afraid of breaking things.
+                I guess like with many things in life it is about finding the right balance.
+            </p> 
+            <p>
+                Anyways, here goes my attempt to explain what I built. Let's go top-down from a high level of abstraction into the nitty-gritty details.
+                First let's look at the file structure. There is two files behind the web app:
+                <ul>
+                    <li>index.html</li>
+                    <li>app.js</li>
+                </ul>
+                As you can see by the ending they are an html file and a Javascript file. 
+                I tried to keep the strucutre of the app organized in the html file and the logic behind it in the Javascript file, at least for the most part.
+                I am not yet sure where exactly the best place is to put which parts. I am learing as I go. 
+            </p>
+            <p>
+                Here you can see the parts of index.html and app.js in the order they appear in the code and how they are connected:
+            </p>
+            <p>
+                <img src="images/BudgetBuddy_CodeOverview.svg" width="80%" height="100%" alt="Code Overview Diagram">
+            </p>
+            <p>
+                The modals are important elements. They seem to basically be pop-up windows, at least that is how I used them. I like that they allow the user to focus on a specific thing such as data entry.
+                That is why I used them a lot. There is a modal for expense input, one for viewing and deleting the expenses, one for settings and finally one for displaying the terms which is not part of the functionality though.
+                Nevertheless the last modal is very important because it notifies the user that local browser storage is used to store data. 
+                This is the reason why all user data disapears after clearing browsing data.
+            </p>
+            <p>
+                The html part is responsible for the structure of the modals while the Javascript part implements the logic behind them. 
+                Let's now dive into the logic behind the Javascript part by looking at the control flow.
+                Quick head's up: while making this graph I realized that the basic structure of the control flow seems to make sense: 
+                If you press on the left cell of a category you can enter and expense, if you press on the right cell 
+                you can view your expenses and delte them. If you then press the settings button you can change the category budget and name (separately). 
+                However, I got lost when trying to follow the trail of functions and finding a good explanation for why there is local storage and a global array for storing budgets.
+                I stopped myself from going deeper because the main take-away here is that a simpler and cleaner solution, especially for interacting with local storage should be what I explore in potential next projects.
+                You can find my more general thoughts on trying to learn from the building process below.
+                Anyways, if you still want to dig in, enjoy:
+            </p>
+            <p>
+                <img src="images/BudgetBuddy_ControlFlow.svg" width="80%" height="100%" alt="Control Flow Diagram">
+            </p>
+
+            <h2>Refelctions on the building process</h2>
+            <p>Here are some things that I worked well:</p>
+            <ul>
+                <li>Using a lot of functions to keep things modular</li>
+                <li>Iterative building approach: tiny changes, tested often</li>
+                <li>Focussing on core functionality: quick data entry and not flashy features</li>
+            </ul>
+            <p>Here are some things I will try to improve in the future:</p>
+            <ul>
+                <li>Try to better leverage LLM capabilities by outsourcing specific tasks and understanding exactly I want from the LLM</li>
+                <li>Focus on building within a clearer structure and following best practices when it is useful to let me create more</li>
+                <li>Try to keep things more consistent for future reference so that I can built upon what I built without fear of breaking things</li>
+            </ul>
+            <p>
+                So all in all I am happy that I am laying the foundations for my personal software development workflow. However, there is still a lot more for me to learn.
+                I think in the age of LLMs and other types of "artificial intelligence" it is very important to find a good balance between speed and understanding. 
+                The question of successful delegation is: "What do I do myself and what can someone or something else do for me?"
+            </p>
+            <p>
+                I do not think it is an easy question to answer. Also I think it is becoming a lot more relevant for a lot more people, including myself, because AI offers new capabilities. 
+                Regarding Budget Buddy I feel like I may have over-relied on the AI. The problem was that I did not know what exactly I wanted because I did not know how to do it at all. 
+                Moving forward I might try to understand a bit more of the code. 
+                This might mean investing a bit more time initially but then I will be able to prompt the AI more effectively and outsource specific things such as a function that just does one specific job,
+                which is faster in the long run.
+                This leads to another strength of using AI in software development: You can test the output of the LLM! 
+                I would like to learn more about testing so that I can be sure I covered all important scenarios. 
+                On the other hand it is also possible to make tiny changes and instantly test them so that (hopefully) little can go wrong. 
+            </p>
+            <p>
+                In summary I want to try and implement a few best practices in a way they make building things faster and more fun.
+                For example cleaner functions that are coded so that you know what they do (which means less comments needed), less repetitions and clearer flow.
+                I guess it is about finding the balance between a very rigid and structured and a dynamic and creative approach that is suitable to yourself and the context of your project.
+                I am excited to see where my programming journey leads me, thank you for comming along for the ride!
+            </p>
         </div>
     </body>
 </html>
