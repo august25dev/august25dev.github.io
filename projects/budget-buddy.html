@@ -24,8 +24,8 @@
             </p>
             <img src="images/BudgetBuddy_UseCase.svg" width="80%" height="100%" alt="Use Case Diagram">
             <p>
-                On the left-hand side you can see two people that can interact with the system. The developer (me or anyone adopting the software) can add featrues or break stuff.
-                Both things might happen at the same time. 
+                On the left-hand side you can see two people that can interact with the system. The developer (me or anyone adopting the software) can add features or break stuff.
+                Both things might happen at the same time.
             </p>
             <p>
                 The user can 
@@ -42,13 +42,13 @@
             </p>
             <p>
                 When viewing expenses the user can open settings (by pressing the settings icon). This allows the user to set up a category. Even though name and budget of the category have to be set separately,
-                I decided to model both as being included in the set-up of a category, since a category without a budget or name does not fulfill its purpouse.
+                I decided to model both as being included in the set-up of a category, since a category without a budget or name does not fulfill its purpose.
             </p>
 
             <h2>How the code works</h2>
             <p>
                 I built budget buddy using AI in the form of an LLM. I do not understand the code as I do not speak Javascript and HTML fluently, at least not right now.
-                If you are interested in my refelctions about using AI you may look further down the site. With that being said let me try to make sense of the beautiful mess AI and I created.
+                If you are interested in my reflections about using AI you may look further down the site. With that being said let me try to make sense of the beautiful mess AI and I created.
                 I am very much aware that this code does not follow best practices but a part of me does not care because it works, or at least it seems to work. 
                 On the other hand I do want to improve my coding style and make the code easier to maintain and extend without being afraid of breaking things.
                 I guess like with many things in life it is about finding the right balance.
@@ -61,8 +61,8 @@
                     <li>app.js</li>
                 </ul>
                 As you can see by the ending they are an html file and a Javascript file. 
-                I tried to keep the strucutre of the app organized in the html file and the logic behind it in the Javascript file, at least for the most part.
-                I am not yet sure where exactly the best place is to put which parts. I am learing as I go. 
+                I tried to keep the structure of the app organized in the html file and the logic behind it in the Javascript file, at least for the most part.
+                I am not yet sure where exactly the best place is to put which parts. I am learning as I go. 
             </p>
             <p>
                 Here you can see the parts of index.html and app.js in the order they appear in the code and how they are connected:
@@ -74,14 +74,14 @@
                 The modals are important elements. They seem to basically be pop-up windows, at least that is how I used them. I like that they allow the user to focus on a specific thing such as data entry.
                 That is why I used them a lot. There is a modal for expense input, one for viewing and deleting the expenses, one for settings and finally one for displaying the terms which is not part of the functionality though.
                 Nevertheless the last modal is very important because it notifies the user that local browser storage is used to store data. 
-                This is the reason why all user data disapears after clearing browsing data.
+                This is the reason why all user data disappears after clearing browsing data.
             </p>
             <p>
                 The html part is responsible for the structure of the modals while the Javascript part implements the logic behind them. 
                 Let's now dive into the logic behind the Javascript part by looking at the control flow.
                 Quick head's up: while making this graph I realized that the basic structure of the control flow seems to make sense: 
                 If you press on the left cell of a category you can enter and expense, if you press on the right cell 
-                you can view your expenses and delte them. If you then press the settings button you can change the category budget and name (separately). 
+                you can view your expenses and delete them. If you then press the settings button you can change the category budget and name (separately). 
                 However, I got lost when trying to follow the trail of functions and finding a good explanation for why there is local storage and a global array for storing budgets.
                 I stopped myself from going deeper because the main take-away here is that a simpler and cleaner solution, especially for interacting with local storage should be what I explore in potential next projects.
                 You can find my more general thoughts on trying to learn from the building process below.
@@ -91,7 +91,7 @@
                 <img src="images/BudgetBuddy_ControlFlow.svg" width="80%" height="100%" alt="Control Flow Diagram">
             </p>
 
-            <h2>Refelctions on the building process</h2>
+            <h2>Reflections on the building process</h2>
             <p>Here are some things that I worked well:</p>
             <ul>
                 <li>Using a lot of functions to keep things modular</li>
@@ -123,7 +123,7 @@
                 In summary I want to try and implement a few best practices in a way they make building things faster and more fun.
                 For example cleaner functions that are coded so that you know what they do (which means less comments needed), less repetitions and clearer flow.
                 I guess it is about finding the balance between a very rigid and structured and a dynamic and creative approach that is suitable to yourself and the context of your project.
-                I am excited to see where my programming journey leads me, thank you for comming along for the ride!
+                I am excited to see where my programming journey leads me, thank you for coming along for the ride!
             </p>
         </div>
     </body>
